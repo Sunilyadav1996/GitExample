@@ -38,7 +38,7 @@ public class Login extends HttpServlet {
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/admin?useSSL=false","root","root");
 			Statement state = con.createStatement();
 			ResultSet res = state.executeQuery("SELECT * FROM passenger WHERE email = '"+email+"' AND password = '"+password+"';");
-			System.out.println("Hello World");
+			System.out.println("HelloWorld");
 			if(res.next()) {
 				HttpSession userSession= request.getSession();
 				userSession.setAttribute("id", res.getString(1));
